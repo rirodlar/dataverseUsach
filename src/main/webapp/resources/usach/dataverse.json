@@ -1,0 +1,162 @@
+[
+  {
+    "dataverse": {
+        "name": "FACULTAD DE ADMS Y ECONOMÍA",
+        "alias": "FAE",
+        "dataverseContacts": [
+          {
+            "contactEmail": "fae@usach.cl"
+          }
+        ],
+        "affiliation": "FAE",
+        "description": "We do all the ADMS Y ECONOMÍA.",
+        "dataverseType": "DEPARTMENT"
+      },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD DE CIENCIA",
+      "alias": "FCIENCIA",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fciencia@usach.cl"
+        }
+      ],
+      "affiliation": "FCIENCIA",
+      "description": "We do all the ciencia.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD DE CIENCIAS MÉDICAS",
+      "alias": "FCM",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fcienciamedicas@usach.cl"
+        }
+      ],
+      "affiliation": "FCM",
+      "description": "We do all the ciencia medica.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD DE DERECHO",
+      "alias": "FDERECHO",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fcienciamedicas@usach.cl"
+        }
+      ],
+      "affiliation": "FDERECHO",
+      "description": "We do all the derecho.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD DE HUMANIDADES",
+      "alias": "FAHU",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fhumanidades@usach.cl"
+        }
+      ],
+      "affiliation": "FAHU",
+      "description": "We do all the HUMANIDADES.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD DE INGENIERÍA",
+      "alias": "FING",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fhumanidades@usach.cl"
+        }
+      ],
+      "affiliation": "FING",
+      "description": "We do all the Ingenieria.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD DE QUÍMICA Y BIOLOGÍA",
+      "alias": "FQYB",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fhumanidades@usach.cl"
+        }
+      ],
+      "affiliation": "FQYB",
+      "description": "We do all the Quimica Biologia.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "FACULTAD TECNOLÓGICA",
+      "alias": "FACTEC",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fteologia@usach.cl"
+        }
+      ],
+      "affiliation": "FACTEC",
+      "description": "We do all the Teologia.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": false,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "ESCUELA DE ARQUITECTURA",
+      "alias": "ARQUITECTURA",
+      "dataverseContacts": [
+        {
+          "contactEmail": "fteologia@usach.cl"
+        }
+      ],
+      "affiliation": "ARQUITECTURA",
+      "description": "We do all the ARQUITECTURA.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  },
+  {
+    "dataverse": {
+      "name": "PROGRAMA DE BACHILLERATO",
+      "alias": "BACHI",
+      "dataverseContacts": [
+        {
+          "contactEmail": "bachi@usach.cl"
+        }
+      ],
+      "affiliation": "BACHI",
+      "description": "We do all the bachillerato.",
+      "dataverseType": "DEPARTMENT"
+    },
+    "public": true,
+    "group": true
+  }
+]

@@ -112,33 +112,31 @@ public class BuiltinAuthenticationProvider implements CredentialsAuthenticationP
         
         if ( u == null ) return AuthenticationResponse.makeFail("Bad username, email address, or password");
         
-        boolean userAuthenticated = PasswordEncryption.getVersion(u.getPasswordEncryptionVersion())
-                                            .check(authReq.getCredential(KEY_PASSWORD), u.getEncryptedPassword() );
-        if ( ! userAuthenticated ) {
-            return AuthenticationResponse.makeFail("Bad username or password");
-        }
+//        boolean userAuthenticated = PasswordEncryption.getVersion(u.getPasswordEncryptionVersion())
+//                                            .check(authReq.getCredential(KEY_PASSWORD), u.getEncryptedPassword() );
+//        if ( ! userAuthenticated ) {
+//            return AuthenticationResponse.makeFail("Bad username or password");
+//        }
         
         
-        if ( u.getPasswordEncryptionVersion() < PasswordEncryption.getLatestVersionNumber() ) {
-            try {
-                String passwordResetUrl = bean.requestPasswordUpgradeLink(u);
-                
-                return AuthenticationResponse.makeBreakout(u.getUserName(), passwordResetUrl);
-            } catch (PasswordResetException ex) {
-                return AuthenticationResponse.makeError("Error while attempting to upgrade password", ex);
-            }
-//        } else {
-//            return AuthenticationResponse.makeSuccess(u.getUserName(), u.getDisplayInfo());
-        }
-        final List<String> errors = passwordValidatorService.validate(authReq.getCredential(KEY_PASSWORD));
-        if (!errors.isEmpty()) {
-            try {
-                String passwordResetUrl = bean.requestPasswordComplianceLink(u);
-                return AuthenticationResponse.makeBreakout(u.getUserName(), passwordResetUrl);
-            } catch (PasswordResetException ex) {
-                return AuthenticationResponse.makeError("Error while attempting to upgrade password", ex);
-            }
-        }
+//        if ( u.getPasswordEncryptionVersion() < PasswordEncryption.getLatestVersionNumber() ) {
+//            try {
+//                String passwordResetUrl = bean.requestPasswordUpgradeLink(u);
+//
+//                return AuthenticationResponse.makeBreakout(u.getUserName(), passwordResetUrl);
+//            } catch (PasswordResetException ex) {
+//                return AuthenticationResponse.makeError("Error while attempting to upgrade password", ex);
+//            }
+//        }
+//        final List<String> errors = passwordValidatorService.validate(authReq.getCredential(KEY_PASSWORD));
+//        if (!errors.isEmpty()) {
+//            try {
+//                String passwordResetUrl = bean.requestPasswordComplianceLink(u);
+//                return AuthenticationResponse.makeBreakout(u.getUserName(), passwordResetUrl);
+//            } catch (PasswordResetException ex) {
+//                return AuthenticationResponse.makeError("Error while attempting to upgrade password", ex);
+//            }
+//        }
         if(null == authUser) {
             authUser = authBean.getAuthenticatedUser(u.getUserName());
         }
