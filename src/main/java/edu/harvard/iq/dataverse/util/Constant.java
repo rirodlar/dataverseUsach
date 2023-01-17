@@ -2,7 +2,7 @@ package edu.harvard.iq.dataverse.util;
 
 public class Constant {
 
-    private static final String IP = "http://localhost:8080";
+    public static final String URI_PATH = "http://localhost:8080";
 
     public static final String API_TOKEN = "d156be87-23a2-4ce1-bceb-50a42a364b96\n";
     public static final String ROL_CONTRIBUTOR = "dsContributor";
@@ -14,8 +14,13 @@ public class Constant {
 
     public static final String API_ACADEMIC = "https://api.dti.usach.cl/api/docente/";
 
-    public static final String API_LOCAL_DATAVERSE = IP + "/api/builtin-users?key=builtInS3kretKey=123";
-    public static final String API_LOCAL_CREATE_DATAVERSE = IP + "/resources/usach/dataverse.json";
+    public static final String CREATE_BUILD_USERS = URI_PATH + "/api/builtin-users?key=builtInS3kretKey=123";
+    public static final String JSON_CREATE_DATAVERSE = URI_PATH + "/resources/usach/dataverse.json";
 
     public static final String ACADEMICOS = "ACADEMICOS";
+
+    public static final String USER_NOT_FOUND_LDAP = "User Not Found LDAP";
+    public static final String API_LOCAL_USACH = URI_PATH + "/api/dataverses/usach";
+
+    public static final String ROL_DS_CONTRIBUTOR = "dsContributor";
 }

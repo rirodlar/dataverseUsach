@@ -737,7 +737,10 @@
                                 <p class="help-block">
                                     #{bundle['dataset.template.tip']}
                                 </p>
-                                <p:selectOneMenu value="#{DatasetPage.selectedTemplate}" onchange="updateTemplate()"
+
+
+
+                                <p:selectOneMenu value="#{DatasetPage.selectedTemplate}" onchange="updateTemplate()" disabled="#{DatasetPage.dataverseTemplates.size() > 1 ? false: true}"
                                                  converter="templateConverter" id="select_DatasetTemplate" styleClass="form-control"
                                                  valueChangeListener="#{DatasetPage.updateSelectedTemplate}"
                                                  style="width:auto !important; max-width:100%; min-width:200px;">

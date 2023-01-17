@@ -187,7 +187,7 @@ public class DataverseSession implements Serializable{
     
     // Language Locale methods: 
     
-    private String localeCode;
+    private String localeCode = "es";
     
     public String getLocaleCode() {
         if (localeCode == null) {
@@ -210,13 +210,13 @@ public class DataverseSession implements Serializable{
     public void initLocale() {
         
         if(FacesContext.getCurrentInstance() == null) {
-            localeCode = "en";
+            localeCode = "es";
         }
         else if (FacesContext.getCurrentInstance().getViewRoot() == null ) {
             localeCode = FacesContext.getCurrentInstance().getExternalContext().getRequestLocale().getLanguage();
         }
-        else if (FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage().equals("en_US")) {
-            localeCode = "en";
+        else if (FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage().equals("en_ES")) {
+            localeCode = "es";
         }
         else {
             localeCode = FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage();

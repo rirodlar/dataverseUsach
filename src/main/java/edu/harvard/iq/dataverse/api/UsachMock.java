@@ -1,7 +1,6 @@
 package edu.harvard.iq.dataverse.api;
 
 import edu.harvard.iq.dataverse.Dataverse;
-import edu.harvard.iq.dataverse.DataverseEntity;
 import edu.harvard.iq.dataverse.DataverseServiceBean;
 import edu.harvard.iq.dataverse.RestUsachServiceBean;
 import org.json.JSONObject;
@@ -13,22 +12,22 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+import static edu.harvard.iq.dataverse.util.Constant.USER_NOT_FOUND_LDAP;
+
 /**
  * Where the secure, setup API calls live.
  * 
- * @author michael
+ * @author rarodriguezl
  */
 
 @Path("mock")
-public class LdapMock extends AbstractApiBean {
+public class UsachMock extends AbstractApiBean {
 
-	private static final Logger logger = Logger.getLogger(LdapMock.class.getName());
+	private static final Logger logger = Logger.getLogger(UsachMock.class.getName());
+
 
 	@EJB
 	RestUsachServiceBean restUsachServiceBean;
-
-	@EJB
-	Dataverses dataverses;
 
 	@EJB
 	DataverseServiceBean dataverseService;
@@ -48,10 +47,9 @@ public class LdapMock extends AbstractApiBean {
 	@Path("/activate")
 	public Response activate(JsonObject jsonObject) throws IOException {
 
-
 		String rut = this.ldapMock(jsonObject);
 		if(rut == null){
-			return error(Response.Status.BAD_REQUEST, "User Not Found LDAP" );
+			return error(Response.Status.BAD_REQUEST, USER_NOT_FOUND_LDAP);
 		}
 
 		JSONObject jsonApiAcademic = restUsachServiceBean.apiAcademic(rut);
@@ -68,36 +66,17 @@ public class LdapMock extends AbstractApiBean {
 	public Response find(@QueryParam("affiliation") String affiliation) throws IOException {
 
 
-		//dataverses.findByAffiliation(1);
 		Dataverse dataverse = dataverseService.findByAffiliation(affiliation);
-		System.out.println(dataverse);
 
 		return ok(Json.createObjectBuilder().add("name", dataverse.getName()));
 	}
 
-	@GET
+	@POST
 	@Path("/populateDataverse")
-	public Response createDataverseList() throws IOException {
+	public Response createDataverseList(JsonArray jsonArray) throws IOException {
 
-
-		Response response = restUsachServiceBean.createDataverseInitial();
-		System.out.println(response);
-
-
-		return ok(Json.createObjectBuilder().add("create", "creaet DATAveserse List"));
+		Response response = restUsachServiceBean.createDataverseInitial(jsonArray);
+		return response;
 	}
-
-	/**
-	 * FACULTAD DE ADMS Y ECONOMÍA	FAE
-	 * FACULTAD DE CIENCIA	FCIENCIA
-	 * FACULTAD DE CIENCIAS MÉDICAS	FCM
-	 * FACULTAD DE DERECHO	FDERECHO
-	 * FACULTAD DE HUMANIDADES	FAHU
-	 * FACULTAD DE INGENIERÍA	FING
-	 * FACULTAD DE QUÍMICA Y BIOLOGÍA	FQYB
-	 * FACULTAD TECNOLÓGICA	FACTEC
-	 * ESCUELA DE ARQUITECTURA	ARQUITECTURA
-	 * PROGRAMA DE BACHILLERATO	BACHI
-	 */
 
 }
