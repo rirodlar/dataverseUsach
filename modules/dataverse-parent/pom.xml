@@ -129,7 +129,7 @@
  
     <properties>
         <!-- This is a special Maven property name, do not change! -->
-        <revision>5.12.1</revision>
+        <revision>1.1.0</revision>
     
         <target.java.version>11</target.java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -137,7 +137,7 @@
         <!-- Needed to avoid IDEA IDE compilation failures. See commits in GH #5059 -->
         <compilerArgument></compilerArgument>
         <project.timezone>UTC</project.timezone>
-        <project.language>en</project.language>
+        <project.language>es</project.language>
         <project.region>US</project.region>
         <!--
             Moving this from plugin config to global config, because of GH-5122.
