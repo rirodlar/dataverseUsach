@@ -603,11 +603,11 @@
                                     </div>
                                     <div id="featuredDataversesList" class="owl-carousel owl-theme">
                                         <ui:repeat value="#{DataversePage.carouselFeaturedDataverses}" var="dv" varStatus="status">
-                                            <div class="item" style="vertical-align:middle;">
+                                            <div class="item" style="vertical-align:middle;position: relative; background-color: #F28E1E;">
                                                 <c:set var="dvFeatUrl" value="/dataverse/#{dv.alias}"/>
-                                                <a href="#{widgetWrapper.wrapURL(dvFeatUrl)}">
+                                                <a href="#{widgetWrapper.wrapURL(dvFeatUrl)}" style="position: absolute; top: 50%;left: 50%; transform: translate(-50%, -50%); color: #FFFFFF">
                                                     <img src="/logos/#{dv.logoOwnerId}/#{dv.dataverseTheme.logo}" alt="#{of:format1(bundle['alt.logo'], dv.name)}" jsf:rendered="#{!empty dv.dataverseTheme.logo}"/>
-                                                    <span class="icon-dataverse" jsf:rendered="#{empty dv.dataverseTheme.logo}"></span>
+<!--                                                    <span class="icon-dataverse" jsf:rendered="#{empty dv.dataverseTheme.logo}"></span>-->
                                                     <h:outputText styleClass="show" value="#{dv.name}"/>
                                                 </a>
                                             </div>
