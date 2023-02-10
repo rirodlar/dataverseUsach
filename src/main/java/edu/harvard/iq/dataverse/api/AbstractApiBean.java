@@ -572,6 +572,10 @@ public abstract class AbstractApiBean {
 	 							  : dataverseSvc.findByAlias(idtf);
 	}
 
+    protected Dataverse findDataverseByAffiliation( String idtf ) {
+        return dataverseSvc.findByAffiliation(idtf);
+    }
+
 	protected DvObject findDvo( Long id ) {
 		return em.createNamedQuery("DvObject.findById", DvObject.class)
 				.setParameter("id", id)

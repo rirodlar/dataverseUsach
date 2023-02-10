@@ -15,7 +15,7 @@
     <ui:param name="showAddDatasetLink" value="#{permissionsWrapper.authUsersCanCreateDatasetsInDataverse(settingsWrapper.rootDataverse)}"/>
     <ui:param name="showAddDataGroup" value="#{showAddDataverseLink or showAddDatasetLink}"/>
 
-    <nav id="dataverse-header-block" style="margin-top: 30px">
+    <nav id="dataverse-header-block">
         <!-- Navbar Panel -->
         <div id="navbarFixed" class="navbar navbar-default navbar-fixed-top" jsf:rendered="#{!widgetWrapper.widgetView}">
             <div class="container">

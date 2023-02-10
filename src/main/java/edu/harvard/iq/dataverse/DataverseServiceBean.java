@@ -252,7 +252,20 @@ public class DataverseServiceBean implements java.io.Serializable {
             return null;
         }
     }
-    
+
+    public Dataverse findByAffiliation(String anAlias) {
+        try {
+            return (anAlias.toLowerCase().equals(":root"))
+                    ? findRootDataverse()
+                    : em.createNamedQuery("Dataverse.findByAffiliation", Dataverse.class)
+                    .setParameter("affiliation", anAlias.toLowerCase())
+                    .getSingleResult();
+        } catch ( NoResultException|NonUniqueResultException ex ) {
+            logger.warning("Unable to find a single dataverse using affiliation \"" + anAlias + "\": " + ex);
+            return null;
+        }
+    }
+
 	public boolean hasData( Dataverse dv ) {
 		TypedQuery<Long> amountQry = em.createNamedQuery("Dataverse.ownedObjectsById", Long.class)
 								.setParameter("id", dv.getId());
